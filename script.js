@@ -266,6 +266,8 @@ function updatePfNav() {
 if (pfContent) pfContent.addEventListener('scroll', updatePfNav);
 
 if (btnPortfolio) btnPortfolio.addEventListener('click', e => { e.preventDefault(); openPortfolio(); });
+const btnPortfolioCta = document.getElementById('btn-portfolio-cta');
+if (btnPortfolioCta) btnPortfolioCta.addEventListener('click', e => { e.preventDefault(); openPortfolio(); });
 
 if (pfClose) pfClose.addEventListener('click', closePortfolio);
 if (modalPortfolio) modalPortfolio.addEventListener('click', e => { if (e.target === modalPortfolio) closePortfolio(); });
