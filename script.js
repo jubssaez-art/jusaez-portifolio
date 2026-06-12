@@ -267,8 +267,6 @@ if (pfContent) pfContent.addEventListener('scroll', updatePfNav);
 
 if (btnPortfolio) btnPortfolio.addEventListener('click', e => { e.preventDefault(); openPortfolio(); });
 
-const btnAtuacaoHero = document.getElementById('btn-atuacao-hero');
-if (btnAtuacaoHero) btnAtuacaoHero.addEventListener('click', e => { e.preventDefault(); openPortfolio(); });
 if (pfClose) pfClose.addEventListener('click', closePortfolio);
 if (modalPortfolio) modalPortfolio.addEventListener('click', e => { if (e.target === modalPortfolio) closePortfolio(); });
 
