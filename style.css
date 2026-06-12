@@ -1030,82 +1030,97 @@ body.dark-mode .slide-info {
 }
 
 /* ── Process ──────────────────────────────────────── */
-.process {
+/* Portfolio CTA Section */
+.portfolio-cta-section {
     background: var(--bg-color);
     border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 100px 0;
 }
 
-.process .section-header h2 {
-    margin-bottom: 0;
+.portfolio-cta-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
 }
 
-.process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    margin-top: 60px;
-    border: 1px solid var(--border);
+.portfolio-cta-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    opacity: 0.6;
 }
 
-.step {
+.portfolio-cta-btn {
     position: relative;
-    padding: 40px 36px 44px;
-    border-right: 1px solid var(--border);
-    transition: background 0.3s ease;
-    overflow: hidden;
-}
-
-.step:last-child {
-    border-right: none;
-}
-
-.step:hover {
-    background: rgba(197, 160, 89, 0.03);
-}
-
-.step::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.step:hover::after {
-    width: 100%;
-}
-
-.step-number {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 60px;
+    text-decoration: none;
+    color: var(--text-main);
     font-family: 'Playfair Display', serif;
-    font-size: 72px;
-    color: rgba(197, 160, 89, 0.08);
-    line-height: 1;
-    margin-bottom: 28px;
-    font-style: italic;
-    display: block;
-    transition: color 0.3s ease;
-}
-
-.step:hover .step-number {
-    color: rgba(197, 160, 89, 0.18);
-}
-
-.step h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
+    font-size: 28px;
     font-style: italic;
     font-weight: 400;
-    color: var(--text-main);
-    margin-bottom: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: color 0.4s ease, border-color 0.4s ease;
+    letter-spacing: 0.5px;
 }
 
-.step p {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.75;
+.portfolio-cta-btn__bg {
+    position: absolute;
+    inset: 0;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 0;
+}
+
+.portfolio-cta-btn:hover .portfolio-cta-btn__bg {
+    transform: scaleX(1);
+}
+
+.portfolio-cta-btn:hover {
+    color: #fff;
+    border-color: var(--primary);
+}
+
+.portfolio-cta-btn__text,
+.portfolio-cta-btn__arrow {
+    position: relative;
+    z-index: 1;
+}
+
+.portfolio-cta-btn__arrow {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-cta-btn:hover .portfolio-cta-btn__arrow {
+    transform: translateX(6px);
+}
+
+@keyframes pulse-border {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
+    50%       { box-shadow: 0 0 0 6px rgba(197, 160, 89, 0.12); }
+}
+
+.portfolio-cta-btn {
+    animation: pulse-border 3s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .portfolio-cta-btn {
+        font-size: 20px;
+        padding: 18px 36px;
+    }
 }
 
 /* Contact */
@@ -2000,7 +2015,14 @@ body.dark-mode .contact-info {
     }
     .hero-image {
         justify-content: center;
-        margin-top: 40px;
+        margin-top: 24px;
+        width: 100%;
+    }
+    .hero-image img {
+        max-height: 45vh;
+        max-width: 260px;
+        width: 100%;
+        object-fit: contain;
     }
     .hero h1 {
         font-size: 48px;
@@ -2028,12 +2050,7 @@ body.dark-mode .contact-info {
     .stat-divider {
         display: none;
     }
-    .process-steps {
-        grid-template-columns: 1fr 1fr;
-    }
-    .step {
-        border-bottom: 1px solid var(--border);
-    }
+
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -2055,9 +2072,6 @@ body.dark-mode .contact-info {
 }
 
 @media (max-width: 480px) {
-    .process-steps {
-        grid-template-columns: 1fr;
-    }
     .services-grid {
         grid-template-columns: 1fr;
     }
