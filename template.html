@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} | Juliana Felix Arnal Saez</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta property="og:title" content="{{TITLE}} | Juliana Felix Arnal Saez">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:type" content="website">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="internal-page">
+    <div id="preloader" class="preloader">
+        <div class="preloader-panel">
+            <div class="preloader-logo">JULIANA FELIX</div>
+            <div class="preloader-art">
+                <div class="preloader-ring"></div>
+            </div>
+            <h2 class="preloader-title">PORTFÓLIO</h2>
+            <div class="preloader-subtitle">DATA ANALYST</div>
+        </div>
+    </div>
+    <header id="header">
+        <nav>
+            <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">JULIANA FELIX</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">Sobre</a></li>
+                <li><a href="index.html#services">Serviços</a></li>
+                <li><a href="index.html#contact" class="btn-primary">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Alternar modo noturno">☾</button>
+
+    <main>
+        <section class="internal-hero">
+            <div class="container">
+                <span class="section-tag">{{TAG}}</span>
+                <h1>{{TITLE}}</h1>
+                <p class="hero-description">{{DESCRIPTION}}</p>
+            </div>
+        </section>
+
+        <section class="content-details">
+            <div class="container">
+                <div class="details-grid">
+                    <div class="details-text">
+                        {{CONTENT}}
+                    </div>
+                </div>
+                <div class="back-nav">
+                    <a href="index.html#services" class="btn-secondary">← Voltar para Serviços</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Juliana Felix Arnal Saez. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
